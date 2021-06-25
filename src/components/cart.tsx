@@ -69,7 +69,7 @@ const Cart = () => {
             </>
           ) : (
             <>
-              {products.map((product: { id: any; img: string | undefined; title: React.ReactNode; quantity: any; price: number; }) => (
+              {products.map((product) => (
                 <>
                   <Box
                     padding="0px"
@@ -187,8 +187,11 @@ const Cart = () => {
             </>
           )}
         </Box>
-
-        <Box
+{totalQuantities==0?(
+  <></>
+):(
+  <>
+  <Box
           marginLeft={["20px", "20px", "20px", "60px"]}
           marginTop={["0px", "0px", "0px", "90px"]}
           marginBottom={["20px", "20px", "20px", "0px"]}
@@ -202,6 +205,9 @@ const Cart = () => {
             Amount to be paid: {"\u20B9"} {totalPrice}
           </Text>
         </Box>
+  </>
+)}
+        
       </Flex>
     </>
   );
